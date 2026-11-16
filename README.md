@@ -6,8 +6,6 @@
 
 SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
-**Maintained by [ToastedFrog2](https://github.com/ToastedFrog2)**  
-**Version:** 1.3.6  
 **Tested firmware:** 3.65
 
 <p align="center">
