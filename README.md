@@ -6,6 +6,7 @@
 
 SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
+**Version:** 1.3.7  
 **Tested firmware:** 3.65
 
 <p align="center">
@@ -19,6 +20,12 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - Manual keep-awake toggle with D-pad Down; OFF after every reboot.
 - Process and module inspection, checked memory tools, and screenshots.
 - Timed button, touch, and analog commands.
+
+## Changes in 1.3.7
+
+- Background SSH allocates memory on demand and releases its heap when the last connection closes.
+- Safer uploads preserve existing files when a connection drops; shorter SCP replacements now remove the old file tail.
+- Improved low-memory error handling, multi-file `ls` and `grep`, and clear errors for oversized buffered pipes and redirects.
 
 ## Install
 
