@@ -1,10 +1,18 @@
-# ssh-vita
+<p align="center">
+  <img src="assets/ssh-vita-logo.png" alt="ssh-vita logo" width="128" height="128">
+</p>
+
+<h1 align="center">ssh-vita</h1>
 
 SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
 **Maintained by [ToastedFrog2](https://github.com/ToastedFrog2)**  
 **Version:** 1.3.6  
 **Tested firmware:** 3.65
+
+<p align="center">
+  <img src="assets/ssh-vita-screenshot.png" alt="ssh-vita app interface" width="960">
+</p>
 
 ## Features
 
