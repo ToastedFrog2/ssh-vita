@@ -22,6 +22,8 @@ Examples
 - Agents can create and modify games; Create cheats, modify saved files, and more
 - Agents can directly create plugins
 - Change UI layout and more
+- Quickly diagnose, troubleshoot and fix issues.
+- Agents can play your games for you.
 
 ## Features
 
