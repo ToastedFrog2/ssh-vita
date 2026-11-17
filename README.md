@@ -6,7 +6,7 @@
 
 SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
-**Version:** 1.3.8  
+**Version:** 1.4.2  
 **Tested firmware:** 3.65
 
 <p align="center">
@@ -26,6 +26,31 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - The app defaults to keeping its screen awake while open.
 - Process and module inspection, checked memory tools, and screenshots.
 - Timed button, touch, and analog commands.
+- AES-CTR and ChaCha20-Poly1305 SSH ciphers.
+- Archive extraction, HTTP downloads, installed-app listings, and additional text tools.
+- Memory search, filtering, and timed value freezing.
+- Optional saved safe memory mode, with timed write unlocking on the Vita.
+- Login lockout after repeated authentication failures.
+
+## Changes in 1.4.2
+
+- Bound login fields and wrap connection instructions to fit the app display.
+- Includes the expanded commands and optional safe memory mode introduced in 1.4.0 and 1.4.1.
+
+## Changes in 1.4.1
+
+- Optional safe memory mode is OFF by default and saved across reboots.
+- D-pad Right toggles the mode; D-pad Left unlocks memory writes for 10 minutes.
+- While enabled, the mode restricts memory ranges and operation sizes, checks memory availability for heavy commands, and protects its settings from shell and SFTP changes.
+- The mapped-range check is a heuristic, not a guarantee that every memory operation is valid.
+
+## Changes in 1.4.0
+
+- Added AES-128-CTR and AES-256-CTR with HMAC-SHA2-256, alongside ChaCha20-Poly1305.
+- Added `unzip`, `tar`, `gunzip`, `curl`, `wget`, `nc -z`, `apps`, and text utilities.
+- Added `mem search`, `mem filter`, `mem results`, `mem freeze`, and `mem clear`.
+- Added a 60-second address lockout after five failed logins and a default-password reminder.
+- HTTP downloads accept numeric IPv4 addresses; HTTPS and DNS are not supported.
 
 ## Changes in 1.3.8
 
@@ -63,6 +88,8 @@ sftp USER@VITA_IP
 | Triangle | Toggle password authentication |
 | Square | Generate a new password |
 | Circle | Exit the app |
+| D-pad Right | Toggle safe memory mode (saved; defaults OFF) |
+| D-pad Left | Unlock memory writes for 10 minutes while safe memory mode is ON |
 
 ## Plugin menu
 
