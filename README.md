@@ -18,6 +18,9 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - SSH-2 terminal access, command execution, and SFTP file transfers.
 - Optional background startup with a delayed service launcher.
 - Select + D-pad Left opens a text menu from LiveArea or a game.
+ <p align="center">
+  <img src="assets/mini-menu.png" alt="ssh-vita mini-menu interface" width="400">
+</p>
 - Start, stop, and restart SSH from the menu without opening the app.
 - Manual background keep-awake; OFF after every reboot.
 - The app defaults to keeping its screen awake while open.
