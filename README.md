@@ -13,6 +13,13 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
   <img src="assets/ssh-vita-screenshot.png" alt="ssh-vita app interface" width="960">
 </p>
 
+## Uses
+Examples
+- SSH to access your vita
+- Allow your agent to take full control of your Vita
+- Agents can create and modify games
+- Agents can directly create plugins
+
 ## Features
 
 - SSH-2 terminal access, command execution, and SFTP file transfers.
