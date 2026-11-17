@@ -62,27 +62,10 @@ enable continues after leaving the app. Rebooting always resets it to OFF.
 
 ## Startup and recovery
 
-Press **L** in the app to enable or remove automatic SSH startup. When enabled,
-the service starts after a short boot delay and becomes reachable once Wi-Fi
-is connected.
-
 Hold **D-pad Up from power-on until LiveArea appears** to skip background SSH
 for that boot. The app can still be opened manually. The next normal boot
 restores enabled startup. For an earlier module-loading failure, the standard
 **hold L at boot** plugin bypass remains available.
-
-## Useful commands
-
-```text
-help
-awake status
-awake toggle
-awake off
-startup status
-ps
-mem selftest
-screenshot
-```
 
 Run `help` for the full command list. Memory and input tools require the matching
 kernel helper. Screen capture requires an available application framebuffer.
