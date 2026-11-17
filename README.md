@@ -17,8 +17,9 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 Examples
 - SSH to access your vita
 - Allow your agent to take full control of your Vita
-- Agents can create and modify games
+- Agents can create and modify games; Create cheats, modify saved files, and more
 - Agents can directly create plugins
+- Change UI layout and more
 
 ## Features
 
