@@ -6,7 +6,7 @@
 
 SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
-**Version:** 1.3.7  
+**Version:** 1.3.8  
 **Tested firmware:** 3.65
 
 <p align="center">
@@ -17,15 +17,19 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 
 - SSH-2 terminal access, command execution, and SFTP file transfers.
 - Optional background startup with a delayed service launcher.
-- Manual keep-awake toggle with D-pad Down; OFF after every reboot.
+- Select + D-pad Left opens a text menu from LiveArea or a game.
+- Start, stop, and restart SSH from the menu without opening the app.
+- Manual background keep-awake; OFF after every reboot.
+- The app defaults to keeping its screen awake while open.
 - Process and module inspection, checked memory tools, and screenshots.
 - Timed button, touch, and analog commands.
 
-## Changes in 1.3.7
+## Changes in 1.3.8
 
-- Background SSH allocates memory on demand and releases its heap when the last connection closes.
-- Safer uploads preserve existing files when a connection drops; shorter SCP replacements now remove the old file tail.
-- Improved low-memory error handling, multi-file `ls` and `grep`, and clear errors for oversized buffered pipes and redirects.
+- One SSH service replaces the separate app/background controls.
+- A resident menu shows the service state, address, and connected clients, with controls for SSH and background keep-awake.
+- Stopping SSH leaves the menu available to start it again. Restart closes existing SSH sessions before reopening the listener.
+- App screen always-on defaults to ON and does not enable background keep-awake.
 
 ## Install
 
@@ -45,22 +49,49 @@ sftp USER@VITA_IP
 
 | Button | Action |
 | --- | --- |
-| X | Start or stop the app server |
-| Up | Start or stop the background service |
-| Down | Toggle keep-awake ON/OFF |
+| X | Start or stop SSH |
+| Up | Restart SSH |
+| Down | Toggle background keep-awake ON/OFF |
 | L | Install or remove automatic SSH startup |
 | R | Save a screenshot |
-| Select | Toggle the display |
+| Select | Toggle app screen always-on (defaults ON) |
+| Select + Left | Open or close the resident text menu |
 | Start | Reload settings |
 | Triangle | Toggle password authentication |
 | Square | Generate a new password |
 | Circle | Exit the app |
 
-Keep-awake is **OFF at startup**. Press **Down inside ssh-vita** to enable it,
-and press Down again to disable it. When background SSH is running, an explicit
-enable continues after leaving the app. Rebooting always resets it to OFF.
+## Plugin menu
+
+Install automatic startup with **L** in the app, then reboot after upgrading.
+Press **Select + D-pad Left** from LiveArea or a game to open the text menu.
+SSH runs independently of the app, including after closing it.
+
+The menu displays SSH's current state, the device address and port, and the
+number of connected clients.
+
+| Menu item | Action |
+| --- | --- |
+| Start SSH / Stop SSH | Start or stop the listener; the menu remains available when SSH is stopped |
+| Restart SSH | Disconnect existing clients and restart the listener |
+| Keep awake: ON/OFF | Toggle background keep-awake without opening the app |
+
+Use **Up/Down** to choose an item and **X** to apply it. Press **Circle** or
+**Select + D-pad Left** again to close the menu. Menu button navigation is
+filtered so it does not also move the underlying Vita interface or game.
+Stopping or restarting SSH disconnects existing clients.
+
+Background keep-awake is **OFF after every reboot**. Toggle it in the menu or
+with **Down inside ssh-vita**. An explicit enable continues after leaving the
+app. The app's separate screen always-on setting defaults to **ON each time
+the app opens** and only applies while the app is active.
 
 ## Startup and recovery
+
+Press **L** in the app to enable or remove automatic SSH startup. When enabled,
+the service starts after a short boot delay and becomes reachable once Wi-Fi
+is connected. The app does not need to be opened; closing it does not stop SSH.
+Removing startup changes future boots and does not stop the current service.
 
 Hold **D-pad Up from power-on until LiveArea appears** to skip background SSH
 for that boot. The app can still be opened manually. The next normal boot
