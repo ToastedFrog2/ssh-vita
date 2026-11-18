@@ -35,9 +35,9 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - “Check free storage, battery, and running processes, then explain anything unusual.”
 - “Back up this homebrew configuration, change the requested setting, and verify the file afterward.”
 - “Download this crash log and help identify why my homebrew stopped working.”
-- “Build my plugin on the computer, transfer the output, and tell me what device-side steps are required.”
-- “Capture the screen before and after this menu action and compare the results.”
-- “Inspect this game's loaded modules and help investigate a value for a cheat.”
+- “Build me a plugin that changes the bubbles to tiles look.”
+- “Take over my Vita and play this game for me”
+- “Open up COD BlackOps and add in God move, ammo cheats, more”
 
 ## Features
 
