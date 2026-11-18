@@ -15,15 +15,64 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
   <img src="assets/ssh-vita-screenshot.png" alt="ssh-vita app interface" width="960">
 </p>
 
-## Uses
-Examples
-- SSH to access your vita
-- Allow your agent to take full control of your Vita
-- Agents can create and modify games; Create cheats, modify saved files, and more
-- Agents can directly create plugins
-- Change UI layout and more
-- Quickly diagnose, troubleshoot and fix issues.
-- Agents can play your games for you.
+## Uses and examples
+
+- Access your Vita remotely over SSH and manage files with SFTP or SCP.
+- Connect an AI agent to inspect the device, run supported commands, transfer files, and check the results.
+- Develop homebrew games and plugins on your computer, transfer builds to the Vita, and collect logs during testing.
+- Investigate game behavior, create cheats, and modify compatible game data or save files.
+- Customize supported homebrew interfaces, themes, and configuration files.
+- Diagnose storage, network, application, and plugin issues by gathering system information, logs, and process details.
+- Capture screenshots to document bugs, compare visual changes, or help an agent understand what is on screen.
+- Send timed button, touch, and analog input for menu navigation, repeatable tests, or agent-assisted gameplay.
+- Back up accessible saves and configuration files to your computer before making changes.
+- Search logs, compare file checksums, and inspect large folders to troubleshoot missing or corrupted files.
+- Extract ZIP, TAR, and gzip archives directly on the Vita, or fetch files from an HTTP server on your local network.
+- Inspect loaded modules and use memory search/filter tools to investigate values in compatible running games.
+
+An agent runs on your computer and uses ssh-vita to communicate with the console. Building games and plugins still requires the appropriate development tools on your computer. Game modifications, UI control, and automated gameplay depend on the application and available commands; they are not guaranteed to work with every title.
+
+### Check the device and installed applications
+
+Replace `USER` and `VITA_IP` with the login and address shown by ssh-vita. Replace sample file paths with files that exist on your device.
+
+```sh
+ssh USER@VITA_IP 'sysinfo; battery; df'
+ssh USER@VITA_IP 'apps'
+ssh USER@VITA_IP 'ps'
+ssh USER@VITA_IP 'log 30'
+```
+
+### Transfer a build or retrieve a log
+
+```sh
+scp ./my-homebrew.vpk USER@VITA_IP:/ux0/data/
+scp USER@VITA_IP:/ux0/data/homebrew.log ./homebrew.log
+sftp USER@VITA_IP
+```
+
+Copying a VPK does not install it. Open VitaShell on the Vita to install the transferred package.
+
+### Capture the screen and send timed input
+
+```sh
+ssh USER@VITA_IP 'awake 1800'
+ssh -T USER@VITA_IP 'screenshot -' > vita-screen.bmp
+ssh USER@VITA_IP 'press Cross 100'
+ssh USER@VITA_IP 'tap 480 272 100'
+ssh USER@VITA_IP 'awake off'
+```
+
+The capture is a BMP file. Input acts on the current screen; the example tap uses the center of the 960×544 display. Screen capture requires an available framebuffer, and some full-frame transfers may time out.
+
+### Example requests for a connected agent
+
+- “Check free storage, battery, and running processes, then explain anything unusual.”
+- “Back up this homebrew configuration, change the requested setting, and verify the file afterward.”
+- “Download this crash log and help identify why my homebrew stopped working.”
+- “Build my plugin on the computer, transfer the output, and tell me what device-side steps are required.”
+- “Capture the screen before and after this menu action and compare the results.”
+- “Inspect this game's loaded modules and help investigate a value for a cheat.”
 
 ## Features
 
@@ -146,3 +195,9 @@ kernel helper. Screen capture requires an available application framebuffer.
 ## Third-party notices
 
 See [Third-party notices](LICENSE.md) for the bundled components’ copyright notices and license terms.
+
+## Disclaimer
+
+Use ssh-vita at your own risk. This software is provided “as is,” without warranty of any kind. I (ToastedFrog2) am not responsible for damage to your device, a bricked or unbootable system, lost or corrupted files or saves, account restrictions, or other loss resulting from the use or misuse of this software, third-party tools, scripts, or AI agents connected to it.
+
+You are responsible for the commands you run and the access you give to others or to automated tools. Back up important data before making changes. Safe memory mode and other checks reduce some risks but do not guarantee that an operation is safe or that recovery will be possible.
