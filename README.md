@@ -37,13 +37,13 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - “Download this crash log and help identify why my homebrew stopped working.”
 - “Build me a plugin that changes the bubbles to tiles look.”
 
-  <img src="assets/tilehome-preview.png" alt="TileHome tiled dashboard layout preview" width="555">
+  <img src="assets/tilehome-preview.png" alt="TileHome tiled dashboard layout preview" width="320">
 
 - “Take over my Vita and play this game for me”
 
   <img src="assets/farming-gameplay.png" alt="Farming game running on the Vita" width="320">
 
-- “Open up COD BlackOps and add in God move, ammo cheats, more”
+- “Open up COD BlackOps and add in God mode, ammo cheats, more”
 
   <img src="assets/cod-black-ops-cheats.png" alt="Black Ops Declassified with the VitaCheat menu open" width="320">
 
