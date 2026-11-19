@@ -35,7 +35,10 @@ SSH and SFTP for homebrew-enabled PlayStation Vita systems.
 - “Check free storage, battery, and running processes, then explain anything unusual.”
 - “Back up this homebrew configuration, change the requested setting, and verify the file afterward.”
 - “Download this crash log and help identify why my homebrew stopped working.”
-- "Change the settings app to be blue”
+- “Change the settings app to be blue”
+
+  <img src="assets/settings0.jpg" alt="Settings app with the blue theme applied" width="320">
+  <img src="assets/settings1.jpg" alt="PlayStation Mobile settings with the blue theme applied" width="320">
 - “Build me a plugin that changes the bubbles to tiles look.”
 
   <img src="assets/tilehome-preview.png" alt="TileHome tiled dashboard layout preview" width="320">
